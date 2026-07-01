@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fahad Chandio — GTM Engineer &amp; AI Revenue Systems</title>
+<meta name="description" content="GTM Engineer and Revenue Operations builder. I engineer AI-driven outbound revenue systems — signal-based pipelines, enrichment, cold-email infrastructure, and AI agents. Available across UAE, US (remote/C2C), and EU.">
+<style>
+  :root{
+    --navy:#12324f; --navy2:#1c4a72; --ink:#1b1f24; --muted:#5a6570;
+    --line:#e4e8ee; --bg:#ffffff; --soft:#f5f7fa; --accent:#0b6b3a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"Segoe UI","Inter",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--navy2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+  header.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .nav .brand{font-weight:700;color:var(--navy);letter-spacing:.2px}
+  .nav nav a{margin-left:20px;font-size:14px;color:var(--muted)}
+  .nav nav a:hover{color:var(--navy);text-decoration:none}
+  @media(max-width:640px){.nav nav{display:none}}
+
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--soft),#fff)}
+  .hero h1{font-size:clamp(32px,6vw,50px);line-height:1.05;color:var(--navy);letter-spacing:-.5px}
+  .hero .role{font-size:clamp(16px,2.6vw,21px);color:var(--ink);font-weight:600;margin-top:10px}
+  .hero p.lead{font-size:17px;color:var(--muted);max-width:680px;margin-top:16px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--navy)}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-block;padding:11px 20px;border-radius:9px;font-weight:600;font-size:15px}
+  .btn.primary{background:var(--navy);color:#fff}
+  .btn.primary:hover{background:var(--navy2);text-decoration:none}
+  .btn.ghost{background:#fff;border:1px solid var(--line);color:var(--navy)}
+  .btn.ghost:hover{border-color:var(--navy);text-decoration:none}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--navy2)}
+  h2.sec{font-size:clamp(23px,4vw,30px);color:var(--navy);margin:8px 0 6px;letter-spacing:-.3px}
+  .sec-sub{color:var(--muted);max-width:640px;margin-bottom:26px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.cards{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff;transition:.15s}
+  .card:hover{border-color:var(--navy);box-shadow:0 6px 22px rgba(18,50,79,.07)}
+  .card h3{font-size:17px;color:var(--navy);margin-bottom:8px}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .card .stack{margin-top:12px;font-size:12px;color:var(--navy2);font-weight:600}
+  .card .out{margin-top:10px;font-size:13px;color:var(--accent);font-weight:600}
+
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media(max-width:720px){.metrics{grid-template-columns:repeat(2,1fr)}}
+  .metric{text-align:center;padding:20px 10px;background:var(--soft);border-radius:12px}
+  .metric .n{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+  .metric .l{font-size:13px;color:var(--muted);margin-top:4px}
+
+  .exp{display:grid;gap:14px}
+  .row{display:flex;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+  .row:last-child{border-bottom:none}
+  .row .r{font-weight:700;color:var(--ink)}
+  .row .c{color:var(--muted);font-size:14px}
+  .row .d{color:var(--muted);font-size:13.5px;white-space:nowrap}
+  @media(max-width:640px){.row{flex-direction:column;gap:2px}.row .d{white-space:normal}}
+
+  .skillgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:720px){.skillgrid{grid-template-columns:1fr}}
+  .skillgrid .k{border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .skillgrid .k b{color:var(--navy);font-size:14px;display:block;margin-bottom:5px}
+  .skillgrid .k span{color:var(--muted);font-size:13.5px}
+
+  .avail{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.avail{grid-template-columns:1fr}}
+  .avail .a{border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:10px;padding:18px}
+  .avail .a h4{color:var(--navy);font-size:16px;margin-bottom:6px}
+  .avail .a p{color:var(--muted);font-size:14px}
+  .avail .a.green{border-left-color:var(--accent)}
+
+  .dl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:820px){.dl{grid-template-columns:1fr}}
+  .dl a{display:block;border:1px solid var(--line);border-radius:12px;padding:20px;background:#fff;transition:.15s}
+  .dl a:hover{border-color:var(--navy);box-shadow:0 6px 22px rgba(18,50,79,.07);text-decoration:none}
+  .dl a .t{font-weight:700;color:var(--navy);font-size:16px}
+  .dl a .s{color:var(--muted);font-size:13.5px;margin-top:5px}
+  .dl a .g{margin-top:12px;font-size:13px;font-weight:600;color:var(--navy2)}
+
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px}
+  footer a{font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <span class="brand">Fahad Chandio</span>
+    <nav>
+      <a href="#systems">What I Build</a>
+      <a href="#results">Results</a>
+      <a href="#skills">Skills</a>
+      <a href="#resumes">Résumés</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="border-bottom:none">
+  <div class="wrap">
+    <h1>Fahad Chandio</h1>
+    <div class="role">GTM Engineer &nbsp;·&nbsp; Revenue Operations &amp; AI-Driven Outbound Systems</div>
+    <p class="lead">I engineer the full revenue motion — signal-based lead pipelines, data enrichment, cold-email infrastructure, CRM automation, and AI agents that turn intent signals into booked pipeline. 7+ years across B2B sales, account management, and AI go-to-market systems.</p>
+    <div class="chips">
+      <span class="chip">7x ROAS</span>
+      <span class="chip">$100K+ expansion revenue</span>
+      <span class="chip">40% retention lift</span>
+      <span class="chip">60+ enterprise &amp; gov accounts</span>
+      <span class="chip">3 production AI systems shipped</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="#resumes">Download Résumé</a>
+      <a class="btn ghost" href="https://linkedin.com/in/fchandio" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="mailto:fhdchnd@gmail.com">Email me</a>
+    </div>
+  </div>
+</section>
+
+<section id="systems">
+  <div class="wrap">
+    <div class="eyebrow">What I Build</div>
+    <h2 class="sec">AI &amp; GTM systems, shipped to production</h2>
+    <p class="sec-sub">Not slideware — real systems running on live data, built with modern AI tooling and API pipelines.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Signal-Based Lead Pipelines</h3>
+        <p>Automated pipelines that convert public regulatory-enforcement events (EPA, OSHA, FDA) into buying signals — enriching and scoring companies by ICP fit and routing prioritized leads into outbound. Intent-led prospecting with zero static lists.</p>
+        <div class="stack">Python · Railway · Clay · Instantly · REST APIs</div>
+        <div class="out">→ Turns compliance events into qualified pipeline</div>
+      </div>
+      <div class="card">
+        <h3>AI Visibility Audit Engine</h3>
+        <p>Production audit system orchestrating DataForSEO, Serper, Google PageSpeed, Perplexity, and Anthropic (Claude) APIs via a scheduled AI agent — generating client-ready AEO/SEO reports used as outbound lead magnets.</p>
+        <div class="stack">AI agent · Anthropic &amp; Perplexity APIs · Railway</div>
+        <div class="out">→ Client-ready reports on autopilot</div>
+      </div>
+      <div class="card">
+        <h3>Outbound Revenue Infrastructure</h3>
+        <p>Multi-inbox cold-email systems with warmed domains, sequenced messaging, and deliverability management — plus Clay enrichment tables layering LinkedIn, web-traffic, and tech-stack data with AI-generated personalization and ICP scoring.</p>
+        <div class="stack">Instantly · Clay · Apollo · AI personalization</div>
+        <div class="out">→ Personalized outbound at scale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <div class="eyebrow">Results</div>
+    <h2 class="sec">Numbers I've carried</h2>
+    <div class="metrics">
+      <div class="metric"><div class="n">7x</div><div class="l">Avg. ROAS, US SME accounts</div></div>
+      <div class="metric"><div class="n">$100K+</div><div class="l">Upsell / expansion revenue</div></div>
+      <div class="metric"><div class="n">40%</div><div class="l">Client retention lift</div></div>
+      <div class="metric"><div class="n">60+</div><div class="l">Enterprise &amp; gov accounts</div></div>
+    </div>
+    <div class="exp" style="margin-top:28px">
+      <div class="row"><div><div class="r">Media Solutions Manager — The Vantage</div><div class="c">Programmatic &amp; multi-channel media across EMEA for The Economist, Politico, TIME · accounts incl. NEOM, Etisalat</div></div><div class="d">Dubai · 2023–2025</div></div>
+      <div class="row"><div><div class="r">Account Manager — The Social Nerds</div><div class="c">7x ROAS and $100K+ expansion across US SME accounts, fully remote</div></div><div class="d">Remote · 2022–2023</div></div>
+      <div class="row"><div><div class="r">Senior Account Executive — Crystallite</div><div class="c">50+ accounts, +40% retention, led a team of 5</div></div><div class="d">2021–2022</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Capabilities</div>
+    <h2 class="sec">The stack I operate</h2>
+    <div class="skillgrid">
+      <div class="k"><b>GTM Engineering &amp; Outbound</b><span>Signal-based / intent-led outbound · ICP modeling &amp; data pipelines · Clay · Apollo · Prospeo · Instantly · lead scoring · multi-channel sequences</span></div>
+      <div class="k"><b>AI &amp; Automation</b><span>AI agent design · LLM orchestration · prompt engineering · Anthropic (Claude) &amp; Perplexity APIs · Make · n8n · Zapier · HubSpot Workflows</span></div>
+      <div class="k"><b>CRM &amp; RevOps</b><span>Salesforce · HubSpot · Zoho · Oracle NetSuite · pipeline management · forecasting · lead routing · territory modeling · KPI tracking · Power BI · GA4</span></div>
+      <div class="k"><b>Data &amp; APIs</b><span>REST API integration · SQL · Python · DataForSEO · Serper · Google PageSpeed · enrichment &amp; ETL pipelines · GDPR-aware data handling</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="availability">
+  <div class="wrap">
+    <div class="eyebrow">Availability</div>
+    <h2 class="sec">Open across three markets</h2>
+    <div class="avail">
+      <div class="a green"><h4>UAE 🇦🇪</h4><p>Based in Dubai. <b>Freezone visa holder — no employer sponsorship required.</b> Available for on-site or hybrid roles across the UAE.</p></div>
+      <div class="a"><h4>US — Remote 🇺🇸</h4><p>Open to US remote roles: full-time, freelance, or <b>C2C / Corp-to-Corp</b>. 8+ hrs daily overlap with US business hours.</p></div>
+      <div class="a"><h4>Europe — Remote / Relocation 🇪🇺</h4><p>Open to EU remote and relocation roles. GDPR-aware, distributed-team experienced, Europass CV available.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="resumes">
+  <div class="wrap">
+    <div class="eyebrow">Résumés</div>
+    <h2 class="sec">Download — tailored per market</h2>
+    <p class="sec-sub">Each version is ATS-optimized and tuned to what recruiters in that market screen for.</p>
+    <div class="dl">
+      <a href="Fahad_Chandio_Resume_US_Remote.pdf" download>
+        <div class="t">US — Remote / C2C</div>
+        <div class="s">GTM Engineer positioning, signal-based outbound, contract-ready.</div>
+        <div class="g">Download PDF →</div>
+      </a>
+      <a href="Fahad_Chandio_Resume_UAE.pdf" download>
+        <div class="t">UAE</div>
+        <div class="s">RevOps / Sales Systems, freezone-visa noted, Dubai-based.</div>
+        <div class="g">Download PDF →</div>
+      </a>
+      <a href="Fahad_Chandio_Resume_Europass.pdf" download>
+        <div class="t">Europe — Europass</div>
+        <div class="s">EU Europass format with CEFR languages &amp; GDPR-aware.</div>
+        <div class="g">Download PDF →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:none">
+  <div class="wrap" style="text-align:center">
+    <div class="eyebrow">Contact</div>
+    <h2 class="sec">Let's talk</h2>
+    <p class="sec-sub" style="margin:0 auto 22px">Building an AI-driven go-to-market motion, or need someone who can own revenue systems end to end? I'd love to hear about it.</p>
+    <div class="cta" style="justify-content:center">
+      <a class="btn primary" href="mailto:fhdchnd@gmail.com">fhdchnd@gmail.com</a>
+      <a class="btn ghost" href="https://linkedin.com/in/fchandio" target="_blank" rel="noopener">linkedin.com/in/fchandio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Fahad Chandio · GTM Engineer &amp; AI Revenue Systems</div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
