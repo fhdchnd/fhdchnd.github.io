@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fahad Chandio — GTM Engineer &amp; AI Revenue Systems</title>
-<meta name="description" content="GTM Engineer and Revenue Operations builder. I engineer AI-driven outbound revenue systems — signal-based pipelines, enrichment, cold-email infrastructure, and AI agents. Available across UAE, US (remote/C2C), and EU.">
+<title>Fahad Chandio, GTM Engineer &amp; AI Systems Builder</title>
+<meta name="description" content="GTM Engineer and AI systems builder. I ship production systems, a power-dialer CRM platform, AI voice agents, and signal-based revenue pipelines, plus 7+ years running B2B sales and enterprise account management. Available across UAE, US (remote/C2C), and EU.">
 <style>
   :root{
     --navy:#12324f; --navy2:#1c4a72; --ink:#1b1f24; --muted:#5a6570;
@@ -49,6 +49,7 @@
   .card p{font-size:14.5px;color:var(--muted)}
   .card .stack{margin-top:12px;font-size:12px;color:var(--navy2);font-weight:600}
   .card .out{margin-top:10px;font-size:13px;color:var(--accent);font-weight:600}
+  .card .out a{color:inherit}
 
   .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   @media(max-width:720px){.metrics{grid-template-columns:repeat(2,1fr)}}
@@ -77,7 +78,7 @@
   .avail .a p{color:var(--muted);font-size:14px}
   .avail .a.green{border-left-color:var(--accent)}
 
-  .dl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .dl{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   @media(max-width:820px){.dl{grid-template-columns:1fr}}
   .dl a{display:block;border:1px solid var(--line);border-radius:12px;padding:20px;background:#fff;transition:.15s}
   .dl a:hover{border-color:var(--navy);box-shadow:0 6px 22px rgba(18,50,79,.07);text-decoration:none}
@@ -98,7 +99,7 @@
       <a href="#systems">What I Build</a>
       <a href="#results">Results</a>
       <a href="#skills">Skills</a>
-      <a href="#resumes">Résumés</a>
+      <a href="#resumes">Resumes</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -107,17 +108,17 @@
 <section class="hero" style="border-bottom:none">
   <div class="wrap">
     <h1>Fahad Chandio</h1>
-    <div class="role">GTM Engineer &nbsp;·&nbsp; Revenue Operations &amp; AI-Driven Outbound Systems</div>
-    <p class="lead">I engineer the full revenue motion — signal-based lead pipelines, data enrichment, cold-email infrastructure, CRM automation, and AI agents that turn intent signals into booked pipeline. 7+ years across B2B sales, account management, and AI go-to-market systems.</p>
+    <div class="role">GTM Engineer &amp; AI Systems Builder &nbsp;&middot;&nbsp; Revenue Operations, Technical Delivery, AI Agents</div>
+    <p class="lead">I design and ship production systems, not slideware: a live power-dialer CRM platform, AI voice agents, and signal-based revenue pipelines. 7+ years running B2B sales, enterprise and government account management, and go-to-market operations across the UAE, North America, and EMEA.</p>
     <div class="chips">
+      <span class="chip">3,900+ leads in a live production dialer</span>
       <span class="chip">7x ROAS</span>
       <span class="chip">$100K+ expansion revenue</span>
       <span class="chip">40% retention lift</span>
       <span class="chip">60+ enterprise &amp; gov accounts</span>
-      <span class="chip">3 production AI systems shipped</span>
     </div>
     <div class="cta">
-      <a class="btn primary" href="#resumes">Download Résumé</a>
+      <a class="btn primary" href="#resumes">Download Resume</a>
       <a class="btn ghost" href="https://linkedin.com/in/fchandio" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn ghost" href="mailto:fhdchnd@gmail.com">Email me</a>
     </div>
@@ -127,26 +128,38 @@
 <section id="systems">
   <div class="wrap">
     <div class="eyebrow">What I Build</div>
-    <h2 class="sec">AI &amp; GTM systems, shipped to production</h2>
-    <p class="sec-sub">Not slideware — real systems running on live data, built with modern AI tooling and API pipelines.</p>
+    <h2 class="sec">Production systems I've shipped</h2>
+    <p class="sec-sub">Not slideware, real systems running on live data, most of them built and debugged solo end to end.</p>
     <div class="cards">
       <div class="card">
-        <h3>Signal-Based Lead Pipelines</h3>
-        <p>Automated pipelines that convert public regulatory-enforcement events (EPA, OSHA, FDA) into buying signals — enriching and scoring companies by ICP fit and routing prioritized leads into outbound. Intent-led prospecting with zero static lists.</p>
-        <div class="stack">Python · Railway · Clay · Instantly · REST APIs</div>
-        <div class="out">→ Turns compliance events into qualified pipeline</div>
+        <h3>Ringpath Dialer, Power-Dialer &amp; CRM Platform</h3>
+        <p>A production power-dialer built solo end to end: automatic dialing with real-time voicemail detection, call transcription and AI summarization, and a timezone-aware queue running 3,900+ real leads. Pivoted hosting architecture three times under real infrastructure and cost constraints before landing on a genuinely free, always-on stack.</p>
+        <div class="stack">React 19 &middot; TypeScript &middot; XState &middot; Google Apps Script &middot; Cloudflare Workers &middot; Telnyx</div>
+        <div class="out"><a href="https://cloud.personafyed.com" target="_blank" rel="noopener">Live at cloud.personafyed.com &rarr;</a></div>
+      </div>
+      <div class="card">
+        <h3>CareLine AI, After-Hours Voice Agent</h3>
+        <p>An AI phone agent that answers after-hours calls for home care agencies, captures callback requests properly, and hands off to a human in the morning, deliberately scoped to stay out of regulated clinical territory while still solving the client's real problem.</p>
+        <div class="stack">Vapi &middot; Voice AI &middot; Product scoping &amp; compliance positioning</div>
+        <div class="out"><a href="https://fhdchnd.github.io/careline-demo/" target="_blank" rel="noopener">Live demo &rarr;</a></div>
       </div>
       <div class="card">
         <h3>AI Visibility Audit Engine</h3>
-        <p>Production audit system orchestrating DataForSEO, Serper, Google PageSpeed, Perplexity, and Anthropic (Claude) APIs via a scheduled AI agent — generating client-ready AEO/SEO reports used as outbound lead magnets.</p>
-        <div class="stack">AI agent · Anthropic &amp; Perplexity APIs · Railway</div>
-        <div class="out">→ Client-ready reports on autopilot</div>
+        <p>Production audit system orchestrating DataForSEO, Serper, Google PageSpeed, Perplexity, and Anthropic (Claude) APIs via a scheduled AI agent, generating client-ready AEO/SEO reports used as outbound lead magnets.</p>
+        <div class="stack">AI agent &middot; Anthropic &amp; Perplexity APIs &middot; Railway</div>
+        <div class="out">Client-ready reports on autopilot</div>
+      </div>
+      <div class="card">
+        <h3>Signal-Based Lead Pipelines</h3>
+        <p>Automated pipelines that convert public regulatory-enforcement events (EPA, OSHA, FDA) into buying signals, enriching and scoring companies by ICP fit and routing prioritized leads into outbound. Intent-led prospecting with zero static lists.</p>
+        <div class="stack">Python &middot; Railway &middot; Clay &middot; Instantly &middot; REST APIs</div>
+        <div class="out">Turns compliance events into qualified pipeline</div>
       </div>
       <div class="card">
         <h3>Outbound Revenue Infrastructure</h3>
-        <p>Multi-inbox cold-email systems with warmed domains, sequenced messaging, and deliverability management — plus Clay enrichment tables layering LinkedIn, web-traffic, and tech-stack data with AI-generated personalization and ICP scoring.</p>
-        <div class="stack">Instantly · Clay · Apollo · AI personalization</div>
-        <div class="out">→ Personalized outbound at scale</div>
+        <p>Multi-inbox cold-email systems with warmed domains, sequenced messaging, and deliverability management, plus Clay enrichment tables layering LinkedIn, web-traffic, and tech-stack data with AI-generated personalization and ICP scoring.</p>
+        <div class="stack">Instantly &middot; Clay &middot; Apollo &middot; AI personalization</div>
+        <div class="out">Personalized outbound at scale</div>
       </div>
     </div>
   </div>
@@ -163,9 +176,9 @@
       <div class="metric"><div class="n">60+</div><div class="l">Enterprise &amp; gov accounts</div></div>
     </div>
     <div class="exp" style="margin-top:28px">
-      <div class="row"><div><div class="r">Media Solutions Manager — The Vantage</div><div class="c">Programmatic &amp; multi-channel media across EMEA for The Economist, Politico, TIME · accounts incl. NEOM, Etisalat</div></div><div class="d">Dubai · 2023–2025</div></div>
-      <div class="row"><div><div class="r">Account Manager — The Social Nerds</div><div class="c">7x ROAS and $100K+ expansion across US SME accounts, fully remote</div></div><div class="d">Remote · 2022–2023</div></div>
-      <div class="row"><div><div class="r">Senior Account Executive — Crystallite</div><div class="c">50+ accounts, +40% retention, led a team of 5</div></div><div class="d">2021–2022</div></div>
+      <div class="row"><div><div class="r">Media Solutions Manager, The Vantage</div><div class="c">Programmatic &amp; multi-channel media across EMEA for The Economist, Politico, TIME, accounts including NEOM, Etisalat</div></div><div class="d">Dubai &middot; 2023-2025</div></div>
+      <div class="row"><div><div class="r">Account Manager, The Social Nerds</div><div class="c">7x ROAS and $100K+ expansion across US SME accounts, fully remote</div></div><div class="d">Remote &middot; 2022-2023</div></div>
+      <div class="row"><div><div class="r">Senior Account Executive, Crystallite</div><div class="c">50+ accounts, +40% retention, led a team of 5</div></div><div class="d">2021-2022</div></div>
     </div>
   </div>
 </section>
@@ -175,10 +188,11 @@
     <div class="eyebrow">Capabilities</div>
     <h2 class="sec">The stack I operate</h2>
     <div class="skillgrid">
-      <div class="k"><b>GTM Engineering &amp; Outbound</b><span>Signal-based / intent-led outbound · ICP modeling &amp; data pipelines · Clay · Apollo · Prospeo · Instantly · lead scoring · multi-channel sequences</span></div>
-      <div class="k"><b>AI &amp; Automation</b><span>AI agent design · LLM orchestration · prompt engineering · Anthropic (Claude) &amp; Perplexity APIs · Make · n8n · Zapier · HubSpot Workflows</span></div>
-      <div class="k"><b>CRM &amp; RevOps</b><span>Salesforce · HubSpot · Zoho · Oracle NetSuite · pipeline management · forecasting · lead routing · territory modeling · KPI tracking · Power BI · GA4</span></div>
-      <div class="k"><b>Data &amp; APIs</b><span>REST API integration · SQL · Python · DataForSEO · Serper · Google PageSpeed · enrichment &amp; ETL pipelines · GDPR-aware data handling</span></div>
+      <div class="k"><b>Technical &amp; Product Delivery</b><span>React &middot; TypeScript &middot; XState &middot; Zustand &middot; Google Apps Script &middot; Cloudflare Workers &amp; Pages &middot; Telnyx &amp; Vapi voice APIs &middot; real-time webhooks &middot; Electron</span></div>
+      <div class="k"><b>GTM Engineering &amp; Outbound</b><span>Signal-based / intent-led outbound &middot; ICP modeling &amp; data pipelines &middot; Clay &middot; Apollo &middot; Prospeo &middot; Instantly &middot; lead scoring &middot; multi-channel sequences</span></div>
+      <div class="k"><b>AI &amp; Automation</b><span>AI agent design &middot; LLM orchestration &middot; prompt engineering &middot; Anthropic (Claude) &amp; Perplexity APIs &middot; Make &middot; n8n &middot; Zapier &middot; HubSpot Workflows</span></div>
+      <div class="k"><b>CRM &amp; RevOps</b><span>Salesforce &middot; HubSpot &middot; Zoho &middot; Oracle NetSuite &middot; pipeline management &middot; forecasting &middot; lead routing &middot; territory modeling &middot; KPI tracking &middot; Power BI &middot; GA4</span></div>
+      <div class="k"><b>Data &amp; APIs</b><span>REST API integration &middot; SQL &middot; Python &middot; DataForSEO &middot; Serper &middot; Google PageSpeed &middot; enrichment &amp; ETL pipelines &middot; GDPR-aware data handling</span></div>
     </div>
   </div>
 </section>
@@ -188,33 +202,38 @@
     <div class="eyebrow">Availability</div>
     <h2 class="sec">Open across three markets</h2>
     <div class="avail">
-      <div class="a green"><h4>UAE 🇦🇪</h4><p>Based in Dubai. <b>Freezone visa holder — no employer sponsorship required.</b> Available for on-site or hybrid roles across the UAE.</p></div>
-      <div class="a"><h4>US — Remote 🇺🇸</h4><p>Open to US remote roles: full-time, freelance, or <b>C2C / Corp-to-Corp</b>. 8+ hrs daily overlap with US business hours.</p></div>
-      <div class="a"><h4>Europe — Remote / Relocation 🇪🇺</h4><p>Open to EU remote and relocation roles. GDPR-aware, distributed-team experienced, Europass CV available.</p></div>
+      <div class="a green"><h4>UAE 🇦🇪</h4><p>Based in Dubai. <b>Freezone visa holder, no employer sponsorship required.</b> Available for on-site or hybrid roles across the UAE.</p></div>
+      <div class="a"><h4>US, Remote 🇺🇸</h4><p>Open to US remote roles: full-time, freelance, or <b>C2C / Corp-to-Corp</b>. 8+ hrs daily overlap with US business hours.</p></div>
+      <div class="a"><h4>Europe, Remote / Relocation 🇪🇺</h4><p>Open to EU remote and relocation roles. GDPR-aware, distributed-team experienced, Europass CV available.</p></div>
     </div>
   </div>
 </section>
 
 <section id="resumes">
   <div class="wrap">
-    <div class="eyebrow">Résumés</div>
-    <h2 class="sec">Download — tailored per market</h2>
-    <p class="sec-sub">Each version is ATS-optimized and tuned to what recruiters in that market screen for.</p>
+    <div class="eyebrow">Resumes</div>
+    <h2 class="sec">Download, tailored per market and role</h2>
+    <p class="sec-sub">Each version is ATS-optimized and tuned to what recruiters in that market or role screen for.</p>
     <div class="dl">
       <a href="Fahad_Chandio_Resume_US_Remote.pdf" download>
-        <div class="t">US — Remote / C2C</div>
+        <div class="t">US, Remote / C2C</div>
         <div class="s">GTM Engineer positioning, signal-based outbound, contract-ready.</div>
-        <div class="g">Download PDF →</div>
+        <div class="g">Download PDF &rarr;</div>
       </a>
       <a href="Fahad_Chandio_Resume_UAE.pdf" download>
         <div class="t">UAE</div>
         <div class="s">RevOps / Sales Systems, freezone-visa noted, Dubai-based.</div>
-        <div class="g">Download PDF →</div>
+        <div class="g">Download PDF &rarr;</div>
       </a>
       <a href="Fahad_Chandio_Resume_Europass.pdf" download>
-        <div class="t">Europe — Europass</div>
+        <div class="t">Europe, Europass</div>
         <div class="s">EU Europass format with CEFR languages &amp; GDPR-aware.</div>
-        <div class="g">Download PDF →</div>
+        <div class="g">Download PDF &rarr;</div>
+      </a>
+      <a href="Fahad_Chandio_PMStrategyConsultant_Resume.pdf" download>
+        <div class="t">Technical PM &amp; Strategy Consulting</div>
+        <div class="s">Cross-functional delivery, Agile/Waterfall, Jira/Confluence/ClickUp, systems shipped solo.</div>
+        <div class="g">Download PDF &rarr;</div>
       </a>
     </div>
   </div>
@@ -224,7 +243,7 @@
   <div class="wrap" style="text-align:center">
     <div class="eyebrow">Contact</div>
     <h2 class="sec">Let's talk</h2>
-    <p class="sec-sub" style="margin:0 auto 22px">Building an AI-driven go-to-market motion, or need someone who can own revenue systems end to end? I'd love to hear about it.</p>
+    <p class="sec-sub" style="margin:0 auto 22px">Building an AI-driven go-to-market motion, need a production system shipped, or need someone who can own revenue systems end to end? I'd love to hear about it.</p>
     <div class="cta" style="justify-content:center">
       <a class="btn primary" href="mailto:fhdchnd@gmail.com">fhdchnd@gmail.com</a>
       <a class="btn ghost" href="https://linkedin.com/in/fchandio" target="_blank" rel="noopener">linkedin.com/in/fchandio</a>
@@ -233,7 +252,7 @@
 </section>
 
 <footer>
-  <div class="wrap">© <span id="yr"></span> Fahad Chandio · GTM Engineer &amp; AI Revenue Systems</div>
+  <div class="wrap">&copy; <span id="yr"></span> Fahad Chandio &middot; GTM Engineer &amp; AI Systems Builder</div>
 </footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
