@@ -154,12 +154,28 @@ export const caseStudies = [
     tag: "Containerization / CI-CD",
     title: "Containerization & CI/CD Retrofit",
     context:
-      "A placeholder for the Docker/GitLab CI retrofit work-in-progress in a parallel task this same session.",
-    problem: "PENDING_RETROFIT_REPORT",
-    architecture: [],
-    decisions: [],
-    outcome: "PENDING_RETROFIT_REPORT",
-    lesson: "",
+      "Docker and GitLab CI sat unused - installed, never applied. Rather than a hello-world toy example, retrofitted both onto five real existing pipeline projects, deliberately isolated from anything live or revenue-critical.",
+    problem:
+      "Each project had different real constraints: three already had test suites to wire into CI, one depended on a large local LLM runtime that doesn't belong baked into an image, and one was a loose script with no repository at all.",
+    constraints: [
+      "Never touch or risk live/production systems - all retrofit work stayed on isolated branches, zero commits to main or any live infrastructure",
+      "No fabricated verification - state exactly what was confirmed against what wasn't",
+      "Wire CI test stages to each project's real existing test suite rather than inventing coverage",
+    ],
+    architecture: [
+      { label: "CI", detail: "GitLab CI: lint/test/build stages, test stage wired to each project's real suite where one exists" },
+      { label: "Containers", detail: "Single-stage Dockerfiles - no compiled artifacts to justify a multi-stage build" },
+      { label: "Isolation", detail: "One new branch per project, nothing touching main or live infrastructure" },
+    ],
+    decisions: [
+      "Verified each existing test suite actually passes (38/38, 55/55, 51/51 across three pipelines) before wiring it into CI, instead of asserting a pipeline was green when no GitLab runner was available to confirm it",
+      "Left one pipeline's LLM dependency external rather than forcing it into the container - a local RAG demo's model weights don't belong baked into an image, so the Dockerfile documents the external host requirement instead",
+      "Shipped the RAG demo publicly after genericizing it, since a Docker/CI story needs a real reachable repo, not just local commits",
+    ],
+    outcome:
+      "Five projects retrofitted with real Dockerfiles and GitLab CI configs; three verified against real passing test suites; one pushed public as a working example (github.com/fhdchnd/local-rag-demo). Image builds are written correctly but confirmed pending one manual one-time Docker Desktop setup step - stated as pending, not claimed as done.",
+    lesson:
+      "For a tool just picked up, 'here's exactly what's verified and what's still pending' reads as more credible than a blanket claim - and it's the honest answer anyway.",
   },
 ];
 
