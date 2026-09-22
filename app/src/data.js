@@ -1,12 +1,12 @@
 export const profile = {
   name: "Fahad Chandio",
-  title: "AI Solutions Engineer",
-  subtitle: "Automation, Voice AI & AI-Driven Systems",
+  title: "GTM Engineer",
+  subtitle: "Outbound Systems, Voice Infrastructure & RevOps",
   location: "Dubai, UAE",
-  tagline: "I build the automation your operations team keeps saying they'll get to eventually.",
+  tagline: "I build the plumbing behind pipeline: lists, enrichment, sequences, routing, dialing and the report that tells you what worked.",
   positioning:
-    "I help companies identify operational problems and deploy AI-powered systems that automate workflows and improve business outcomes.",
-  bio: "Six years running enterprise and SMB account relationships across North America, EMEA, and the GCC. Two years designing and shipping the automation and AI systems those accounts actually needed. Not a software engineer by training - the value is deploying real systems into real operational gaps.",
+    "Demand that nobody can attribute is a plumbing problem, not a selling problem. I build the plumbing.",
+  bio: "Eight years running enterprise, government and SMB accounts across the GCC, EMEA and North America (NEOM, PIF, Etisalat, du, DEWA). Since then I have built my own GTM stack end to end: signal-based lead pipelines, enrichment, cold email across ~100 warmed inboxes, and a browser power dialer on Telnyx SIP.",
   email: "fhdchnd@gmail.com",
   linkedin: "https://linkedin.com/in/fchandio",
   github: "https://github.com/fhdchnd",
@@ -18,7 +18,7 @@ export const stats = [
   { value: "7x", label: "Average ROAS" },
   { value: "35%", label: "Retention lift driven" },
   { value: "$100K+", label: "Expansion revenue" },
-  { value: "60+", label: "Enterprise & gov accounts" },
+  { value: "5,903", label: "Leads in my own dialer, zero duplicates" },
 ];
 
 export const caseStudies = [
@@ -37,12 +37,13 @@ export const caseStudies = [
     ],
     architecture: [
       { label: "Client", detail: "React + XState call-state machine, Mac/iPhone/desktop" },
-      { label: "Edge", detail: "Cloudflare Pages + Worker (API proxy, header translation)" },
-      { label: "Backend", detail: "Google Apps Script Web App (business logic, Vitest-tested)" },
-      { label: "Carrier", detail: "SIP/PSTN telephony API - calls, webhooks, transcription" },
+      { label: "API", detail: "Cloudflare Worker: auth, dialing, short-lived Telnyx JWTs, Ed25519-verified webhooks" },
+      { label: "Data", detail: "Cloudflare D1: 5,903 leads, atomic lead claim, idempotent call records" },
+      { label: "Carrier", detail: "Telnyx SIP/PSTN: WebRTC legs, caller-ID rotation across 4 numbers, SMS" },
     ],
     decisions: [
-      "Chose Apps Script + Cloudflare over three paid alternatives (a serverless platform requiring a billing account, and a 'free tier' host that demanded a card on file) purely to hit the zero-cost constraint without sacrificing real-time webhooks.",
+      "Started on Apps Script + Cloudflare to hit a zero-cost constraint, then rebuilt onto a single Cloudflare Worker + D1 after measuring the interim managed backend's gateway failing 5 of 8 requests from the client and 6 of 6 from Cloudflare's own network.",
+      "Found why calls stalled at 'connecting': nothing answered the transferred WebRTC leg, and far-end audio had no element to play into (an answer option, not a client option). Separately, a missing outbound voice profile was rejecting every call, which looked like a balance problem.",
       "Built a 356-entry area-code-to-timezone map so leads inside their local calling window get soft-prioritized in the queue - never dropped, just deprioritized when out of window, so the queue can never go idle.",
       "When browser transfer legs started silently failing in production, root-caused it directly against the carrier's own call-detail-record API instead of guessing - found a single disabled config flag on the credential connection rejecting every transfer leg in under a second.",
     ],
@@ -50,6 +51,49 @@ export const caseStudies = [
       "Live system, real calls verified end-to-end. A full 11-point WebRTC/telephony security and audio-quality audit found 8 points already compliant and closed the remaining 2 (explicit echo-cancellation/noise-suppression constraints, documented TURN-relay fallback).",
     lesson:
       "The best debugging tool is the system's own source of truth - the carrier's call logs solved in minutes what browser console errors couldn't explain at all.",
+  },
+  {
+    id: "signal-pipelines",
+    tag: "Data Engineering / GTM Systems",
+    title: "Outbound Machinery: Signal, Enrich, Sequence",
+    context:
+      "Cold outbound built on static purchased lists converts poorly. A better signal: public data that indicates a business actually has the problem right now.",
+    problem:
+      "Needed a repeatable architecture to turn scattered public data sources - regulatory enforcement records, federal procurement awards, business-listing data - into enriched, scored, ready-to-contact pipeline, without a manual research step per source.",
+    architecture: [
+      { label: "Source", detail: "Public data (regulatory, procurement, business-listing APIs)" },
+      { label: "Compute", detail: "Python cron workers (Railway)" },
+      { label: "Enrichment", detail: "Contact/company enrichment APIs, domain resolution" },
+      { label: "Output", detail: "Scored, prioritized pipeline into CRM/outbound tooling" },
+    ],
+    decisions: [
+      "Standardized the same scrape-enrich-score-route architecture across five independent data sources rather than building bespoke pipelines each time, cutting new-source turnaround to days.",
+      "Validated enrichment hit-rate on a small sample before committing paid API credits to a full run, after an early attempt hit a plan-tier wall with zero return.",
+    ],
+    outcome:
+      "Five pipelines built on one shared architecture, feeding prioritized outbound pipeline instead of static purchased lists.",
+    lesson:
+      "A repeatable pipeline shape is worth more than any single pipeline - the fifth source took a fraction of the first one's build time.",
+  },
+  {
+    id: "revops",
+    tag: "Enterprise RevOps",
+    title: "GTM & RevOps Automation at Enterprise Scale",
+    context:
+      "Managing enterprise and government media accounts (NEOM, Etisalat, The Economist, Politico, TIME) surfaced the same operational drag repeatedly: manual CRM hygiene and lead routing eating account-management time that should go to the client relationship.",
+    architecture: [
+      { label: "CRM", detail: "Oracle NetSuite + Salesforce (Classic & Lightning)" },
+      { label: "Automation", detail: "Make and n8n workflows for hygiene & routing" },
+      { label: "Reporting", detail: "Power BI sales-intelligence dashboards" },
+    ],
+    decisions: [
+      "Automated CRM hygiene and cross-team lead routing directly rather than escalating to an internal engineering backlog, closing the gap in weeks instead of a quarter-plus wait.",
+      "Built Power BI dashboards on top of NetSuite data specifically to inform pricing and account-prioritization decisions, not just static reporting.",
+    ],
+    outcome:
+      "Reduced manual coordination load across sales, delivery, and account management on a 60+ account enterprise book; contributed to 7x average ROAS, a 35% retention lift, and $100K+ in expansion revenue on the accounts it touched most directly.",
+    lesson:
+      "The highest-leverage automation is usually the boring one nobody wants to own - CRM hygiene, not the flashy AI feature.",
   },
   {
     id: "voice-ai",
@@ -105,49 +149,6 @@ export const caseStudies = [
       "Stabilized a product that was intermittently failing under free-tier limits; safety guard shipped ahead of any wider release.",
     lesson:
       "Honest documentation of a safeguard's real limits is worth more than a confident claim that oversells it - the ceiling is the spec for what to build next.",
-  },
-  {
-    id: "signal-pipelines",
-    tag: "Data Engineering / GTM Systems",
-    title: "Signal-Based Data Pipeline Architecture",
-    context:
-      "Cold outbound built on static purchased lists converts poorly. A better signal: public data that indicates a business actually has the problem right now.",
-    problem:
-      "Needed a repeatable architecture to turn scattered public data sources - regulatory enforcement records, federal procurement awards, business-listing data - into enriched, scored, ready-to-contact pipeline, without a manual research step per source.",
-    architecture: [
-      { label: "Source", detail: "Public data (regulatory, procurement, business-listing APIs)" },
-      { label: "Compute", detail: "Python cron workers (Railway)" },
-      { label: "Enrichment", detail: "Contact/company enrichment APIs, domain resolution" },
-      { label: "Output", detail: "Scored, prioritized pipeline into CRM/outbound tooling" },
-    ],
-    decisions: [
-      "Standardized the same scrape-enrich-score-route architecture across five independent data sources rather than building bespoke pipelines each time, cutting new-source turnaround to days.",
-      "Validated enrichment hit-rate on a small sample before committing paid API credits to a full run, after an early attempt hit a plan-tier wall with zero return.",
-    ],
-    outcome:
-      "Five pipelines built on one shared architecture, feeding prioritized outbound pipeline instead of static purchased lists.",
-    lesson:
-      "A repeatable pipeline shape is worth more than any single pipeline - the fifth source took a fraction of the first one's build time.",
-  },
-  {
-    id: "revops",
-    tag: "Enterprise RevOps",
-    title: "GTM & RevOps Automation at Enterprise Scale",
-    context:
-      "Managing enterprise and government media accounts (NEOM, Etisalat, The Economist, Politico, TIME) surfaced the same operational drag repeatedly: manual CRM hygiene and lead routing eating account-management time that should go to the client relationship.",
-    architecture: [
-      { label: "CRM", detail: "Oracle NetSuite + Salesforce (Classic & Lightning)" },
-      { label: "Automation", detail: "Make and n8n workflows for hygiene & routing" },
-      { label: "Reporting", detail: "Power BI sales-intelligence dashboards" },
-    ],
-    decisions: [
-      "Automated CRM hygiene and cross-team lead routing directly rather than escalating to an internal engineering backlog, closing the gap in weeks instead of a quarter-plus wait.",
-      "Built Power BI dashboards on top of NetSuite data specifically to inform pricing and account-prioritization decisions, not just static reporting.",
-    ],
-    outcome:
-      "Reduced manual coordination load across sales, delivery, and account management on a 60+ account enterprise book; contributed to 7x average ROAS, a 35% retention lift, and $100K+ in expansion revenue on the accounts it touched most directly.",
-    lesson:
-      "The highest-leverage automation is usually the boring one nobody wants to own - CRM hygiene, not the flashy AI feature.",
   },
   {
     id: "containerization",
